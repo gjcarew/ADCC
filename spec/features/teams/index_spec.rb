@@ -10,7 +10,7 @@ RSpec.describe 'teams index' do
   # When I visit '/parents'
   # Then I see the name of each parent record in the system
   it 'shows the names of the teams' do
-    team = Team.create(name: "Atos", head_coach: "Andre Galvao", year_founded: 2008, is_brazilian: false)
-    visit '/teams/index'
+    team = Team.create!(name: "Atos", head_coach: "Andre Galvao", year_founded: 2008, is_brazilian: false)
+    visit '/teams'
   end
 end

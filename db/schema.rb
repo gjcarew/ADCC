@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2022_08_23_002634) do
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
-    t.integer "head_coach"
+    t.string "head_coach"
     t.integer "year_founded"
     t.boolean "is_brazilian"
     t.datetime "created_at", null: false
