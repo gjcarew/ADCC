@@ -12,5 +12,7 @@ RSpec.describe 'teams index' do
   it 'shows the names of the teams' do
     team = Team.create!(name: "Atos", head_coach: "Andre Galvao", year_founded: 2008, is_brazilian: false)
     visit '/teams'
+    expect(page).to have_content(team.name)
   end
+
 end
