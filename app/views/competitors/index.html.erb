@@ -1,6 +1,6 @@
 <h1> Competitors </h1>
 <% @competitors.each do |competitor| %>
   <h2><%= competitor.name%></h2>
-  <p>Weight class: <%= competitor.weight_class == 100 ? "99+" : competitor.weight_class%></p>
-  <p><%=competitor.name%> has <%=competitor.previous_winner ? "" : "not"%> won ADCC before.</p>
+  <p>Weight class: <%= competitor.weight%></p>
+  <p><%=competitor.won_lost_str%></p>
 <%end%>
