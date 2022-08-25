@@ -1,4 +1,3 @@
 class Team < ApplicationRecord
-  has_many :song
-
+  has_many :competitors
 end
