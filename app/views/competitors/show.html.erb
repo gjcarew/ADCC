@@ -1,0 +1,3 @@
+<h1><%=@competitor.name%></h1>
+<p>Weight class: <%= @competitor.weight_class == 100 ? "99+" : @competitor.weight_class%></p>
+<p><%=@competitor.name%> has <%=@competitor.previous_winner ? "" : "not"%> won ADCC before.</p>
