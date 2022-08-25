@@ -11,6 +11,18 @@ RSpec.describe 'teams show' do
         expect(page).to have_content(team.year_founded)
         expect(page).to have_content("not from Brazil")
       end
+
+      it 'has a count of number of competitors' do
+        atos = Team.create!(name: "Atos", head_coach: "Andre Galvao", year_founded: 2008, is_brazilian: true)
+        atos.competitors.create!(name: 'Alexandre de Jesus', weight_class: 88,previous_winner: false)
+        atos.competitors.create!(name: 'Josh Hinger', weight_class: 88, previous_winner: false)
+        atos.competitors.create!(name: 'Tye Ruotolo', weight_class: 88, previous_winner: false)
+        atos.competitors.create!(name: 'Lucas Barbosa', weight_class: 88, previous_winner: false)
+        
+        visit "/teams/#{atos.id}"
+
+        expect(page).to have_content("Atos has 4 competitors at ADCC 2022")
+      end
     end
   end
 end
