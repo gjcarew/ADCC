@@ -7,4 +7,6 @@ RSpec.describe Competitor, type: :model do
     expect(competitor).to be_a Competitor
   end
 
+  it {should belong_to :team}
+
 end

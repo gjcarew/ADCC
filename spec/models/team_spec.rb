@@ -6,4 +6,6 @@ RSpec.describe Team, type: :model do
     expect(team).to be_a Team
   end
 
+  it {should have_many :competitors}
+
 end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'teams show' do
   describe 'as a visitor' do
-    describe 'When I visit /parents/:id' do
+    describe 'When I visit /teams/:id' do
       it 'shows the team attributes' do
         team = Team.create!(name: "Atos", head_coach: "Andre Galvao", year_founded: 2008, is_brazilian: false)
         visit "/teams/#{team.id}"
