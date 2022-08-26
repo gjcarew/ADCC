@@ -20,4 +20,3 @@ RSpec.describe 'team competitors' do
     end
   end
 end
-
