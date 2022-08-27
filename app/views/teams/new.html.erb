@@ -1,0 +1,11 @@
+<%= form_with url: '/teams', method: :post, local: true do |form| %>
+  <%= form.label :name %> 
+  <%= form.text_field :name %>
+  <%= form.label :head_coach %>
+  <%= form.text_field :head_coach %>
+  <%= form.label :year_founded %>
+  <%= form.text_field :year_founded %>
+  <%= form.label 'Is the head coach Brazilian?'%>
+  <%= form.check_box :is_brazilian %> 
+  <%= form.submit "Create Team" %>
+<% end %>
