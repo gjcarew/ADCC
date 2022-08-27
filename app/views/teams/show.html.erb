@@ -7,3 +7,4 @@
 <p>Year founded: <%=@team.year_founded%></p>
 <p><%=@team.is_brazilian_str%></p>
 <p><%=@team.name%> has <%=@team.count%> competitor<%=@team.count == 1 ? '' : 's'%> at ADCC 2022</p>
+<%=link_to "View #{@team.name} competitors", "/teams/#{@team.id}/competitors"%>
