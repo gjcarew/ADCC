@@ -1,3 +1,7 @@
+<div>
+<%= link_to "Competitors", '/competitors' %>
+<%= link_to "Teams", '/teams' %>
+</div>
 <h1> Teams </h1>
 <% @teams.each do |team| %>
   <h2 class='team-name' style='display:inline;'><%= team.name%></h2>

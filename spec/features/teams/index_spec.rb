@@ -31,6 +31,21 @@ RSpec.describe 'teams index' do
           expect(page).to have_content(@team2.created_at)
         end
       end
+
+      describe 'User story 8' do
+        it 'has a link to go to the teams index on every page' do
+          @team1 = Team.create!(name: "New Wave Jiu Jitsu", head_coach: "John Danaher", year_founded: 2021, is_brazilian: false)
+          @team2 = Team.create!(name: "B-team", head_coach: "Craig Jones", year_founded: 2021, is_brazilian: false)
+
+          visit '/competitors'
+          click_link 'Teams'
+          expect(current_path).to eq('/teams')
+
+          visit "/teams/#{@team1.id}"
+          click_link 'Teams'
+          expect(current_path).to eq('/teams')
+        end
+      end
     end
   end
 
