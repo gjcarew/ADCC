@@ -12,12 +12,13 @@ class TeamsController < ApplicationController
   end
 
   def create
-    Team.create!(name: params[:name],
-                 head_coach: params[:head_coach],
-                 year_founded: params[:year_founded],
-                 is_brazilian: params[:is_brazilian])
+    Team.create!(team_params)
 
     redirect_to '/teams'
+  end
+
+  def team_params
+    params.permit(:name, :head_coach, :year_founded, :is_brazilian)
   end
 
 end
