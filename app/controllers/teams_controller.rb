@@ -21,4 +21,14 @@ class TeamsController < ApplicationController
     params.permit(:name, :head_coach, :year_founded, :is_brazilian)
   end
 
+  def edit
+    @team = Team.find(params[:id])
+  end
+
+  def update
+    team = Team.find(params[:id])
+    team.update(team_params)
+    redirect_to "/teams/#{params[:id]}"
+  end
+
 end

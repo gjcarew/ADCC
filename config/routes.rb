@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   get '/teams', to: 'teams#index'
   get '/teams/new', to: 'teams#new'
   get '/teams/:id', to: 'teams#show'
+  get '/teams/:id/edit', to: 'teams#edit'
+  patch '/teams/:id', to: 'teams#update'
   get '/teams/:id/competitors', to: 'team_competitors#index'
   get '/competitors', to: 'competitors#index'
   get '/competitors/:id', to: 'competitors#show'
   post '/teams', to: 'teams#create'
+
 end

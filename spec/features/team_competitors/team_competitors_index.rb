@@ -15,7 +15,6 @@ RSpec.describe 'team competitors' do
         expect(page).to have_content(competitor2.weight_class)
         expect(page).to have_content("has won ADCC before")
         expect(page).to have_content("has not won ADCC before")
-
       end
     end
   end
