@@ -8,14 +8,13 @@ RSpec.describe 'team competitors' do
         competitor = team.competitors.create!(name: "Gordon Ryan", weight_class: 100, previous_winner: true)
         competitor2 = team.competitors.create!(name: "Giancarlo Bodoni", weight_class: 88, previous_winner: false)
         visit "/teams/#{team.id}/competitors"
-        save_and_open_page
+        
         expect(page).to have_content(competitor.name)
         expect(page).to have_content(competitor2.name)
         expect(page).to have_content("99+")
         expect(page).to have_content(competitor2.weight_class)
         expect(page).to have_content("has won ADCC before")
         expect(page).to have_content("has not won ADCC before")
-
       end
     end
   end

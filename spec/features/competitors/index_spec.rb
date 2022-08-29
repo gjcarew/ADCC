@@ -13,8 +13,8 @@ RSpec.describe 'competitors index', type: :feature do
       before :each do
         @team1 = Team.create!(name: "New Wave Jiu Jitsu", head_coach: "John Danaher", year_founded: 2021, is_brazilian: false)
         @team2 = Team.create!(name: "B-team", head_coach: "Craig Jones", year_founded: 2021, is_brazilian: false)
-        @competitor = @team1.competitors.create!(name: "Gordon Ryan", weight_class: 100, previous_winner: true, team_id: 1)
-        @competitor2 = @team2.competitors.create!(name: "Nick Rodriguez", weight_class: 100, previous_winner: false, team_id: 2)
+        @competitor = @team1.competitors.create!(name: "Gordon Ryan", weight_class: 100, previous_winner: true)
+        @competitor2 = @team2.competitors.create!(name: "Nick Rodriguez", weight_class: 100, previous_winner: false)
       end
 
       it 'displays the names of the competitors' do

@@ -3,6 +3,7 @@
 <%= link_to "Teams", '/teams' %>
 </div>
 <h1> Teams </h1>
+<%= link_to "New Team", '/teams/new' %>
 <% @teams.each do |team| %>
   <h2 class='team-name' style='display:inline;'><%= team.name%></h2>
   <p style='display:inline;'>Created at <%=team.created_at%></p> 
