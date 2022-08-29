@@ -3,5 +3,6 @@
 <%= link_to "Teams", '/teams' %>
 </div>
 <h1><%=@competitor.name%></h1>
+<%= button_to 'Update Competitor', "/competitors/#{@competitor.id}/edit", method: :get%>
 <p>Weight class: <%= @competitor.weight%></p>
 <p><%=@competitor.won_lost_str%></p>

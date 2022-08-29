@@ -3,7 +3,7 @@
 <%= link_to "Teams", '/teams' %>
 </div>
 <h1><%=@team.name%></h1>
-<%= button_to "Update #{@team.name}", "/teams/#{@team.id}/edit", method: :get%>
+<%= button_to "Update Team", "/teams/#{@team.id}/edit", method: :get%>
 <p>Head Coach: <%=@team.head_coach%></p>
 <p>Year founded: <%=@team.year_founded%></p>
 <p><%=@team.is_brazilian_str%></p>

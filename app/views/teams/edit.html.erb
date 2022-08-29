@@ -1,11 +1,15 @@
+<h1> Edit Team</h1>
+
 <%= form_with url: "/teams/#{@team.id}", method: :patch, local: true do |form|%>
   <%= form.label :name %> 
-  <%= form.text_field :name %>
+  <%= form.text_field :name, value: @team.name %></br>
   <%= form.label :head_coach %>
-  <%= form.text_field :head_coach %>
+  <%= form.text_field :head_coach, value: @team.head_coach %></br>
   <%= form.label :year_founded %>
-  <%= form.text_field :year_founded %>
-  <%= form.label 'Is the head coach Brazilian?'%>
-  <%= form.check_box :is_brazilian %> 
-  <%= form.submit "Update #{@team.name}" %>
+  <%= form.text_field :year_founded, value: @team.year_founded %></br>
+  <%= form.label :is_brazilian_true, 'The head coach is from Brazil'%>
+  <%= form.radio_button :is_brazilian, true %> </br>
+  <%= form.label :previous_winner_false, 'The head coach is not from Brazil' %> 
+  <%= form.radio_button :is_brazilian, false %> </br>
+  <%= form.submit "Update Team" %>
 <% end %>

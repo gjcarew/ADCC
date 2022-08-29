@@ -22,7 +22,7 @@ RSpec.describe 'edit teams' do
         team = Team.create!(name: "Atos", head_coach: "Andre Galvao", year_founded: 2008, is_brazilian: true)
         visit "/teams/#{team.id}"
 
-        click_button "Update #{team.name}"
+        click_button "Update Team"
         expect(current_path).to eq("/teams/#{team.id}/edit")
       end
 
@@ -40,8 +40,8 @@ RSpec.describe 'edit teams' do
         fill_in 'Name', with: 'Atos'
         fill_in 'Head coach', with: 'Andre Galvao'
         fill_in 'Year founded', with: 2008
-        check :is_brazilian
-        click_button "Update #{team.name}"
+        choose :is_brazilian_true
+        click_button "Update Team"
 
         expect(current_path).to eq("/teams/#{team.id}")
         expect(page).to have_content('Atos')
