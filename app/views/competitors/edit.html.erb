@@ -1,0 +1,13 @@
+<h1>Edit Competitor</h1>
+
+<%= form_with url: "/competitors/#{@competitor.id}", method: :patch, local: true do |form|%>
+  <%= form.label :name %> 
+  <%= form.text_field :name %>
+  <%= form.label :weight_class%>
+  <%= form.text_field :weight_class%>
+  <%= form.label :previous_winner_true, 'This competitor has won ADCC before'%>
+  <%= form.radio_button :previous_winner, true %> </br>
+  <%= form.label :previous_winner_false, 'This competitor has not won ADCC before' %> 
+  <%= form.radio_button :previous_winner, false %> </br>
+  <%= form.submit "Update Competitor" %>
+<% end %>
