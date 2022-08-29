@@ -1,6 +1,6 @@
 class CompetitorsController < ApplicationController
   def index
-    @competitors = Competitor.all
+    @competitors = Competitor.where(previous_winner: true)
   end
 
   def show

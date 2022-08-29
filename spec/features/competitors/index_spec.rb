@@ -1,13 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'competitors index', type: :feature do
-  # [ ] done
-
-  # User Story 3, Child Index 
-  
-  # As a visitor
-  # When I visit '/child_table_name'
-  # Then I see each Child in the system including the Child's attributes:
   describe 'as a visitor' do
     describe 'when I visit /competitors' do
       before :each do
@@ -20,14 +13,14 @@ RSpec.describe 'competitors index', type: :feature do
       it 'displays the names of the competitors' do
         visit '/competitors'
         expect(page).to have_content(@competitor.name)
-        expect(page).to have_content(@competitor2.name)
+        
       end
 
       it 'displays competitor attributes' do
         visit '/competitors'
         expect(page).to have_content("99+")
         expect(page).to have_content("has won ADCC before")
-        expect(page).to have_content("has not won ADCC before")
+        
       end
 
       it 'has a link on every page to go to the competitor index' do
@@ -38,6 +31,12 @@ RSpec.describe 'competitors index', type: :feature do
         visit "/teams/#{@team1.id}"
         click_link 'Competitors'
         expect(current_path).to eq('/competitors')
+      end
+
+      it 'I only see records where previous_winner is true (story 15)' do
+        visit '/competitors'
+
+        expect(page).not_to have_content('has not won ADCC before')
       end
     end
   end
