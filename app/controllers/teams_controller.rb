@@ -8,17 +8,11 @@ class TeamsController < ApplicationController
   end
 
   def new
-
   end
 
   def create
     Team.create!(team_params)
-
     redirect_to '/teams'
-  end
-
-  def team_params
-    params.permit(:name, :head_coach, :year_founded, :is_brazilian)
   end
 
   def edit
@@ -31,4 +25,9 @@ class TeamsController < ApplicationController
     redirect_to "/teams/#{params[:id]}"
   end
 
+  private
+
+  def team_params
+    params.permit(:name, :head_coach, :year_founded, :is_brazilian)
+  end
 end

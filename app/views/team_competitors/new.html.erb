@@ -1,0 +1,13 @@
+<div>
+<%= link_to "Competitors", '/competitors' %>
+<%= link_to "Teams", '/teams' %>
+</div>
+<%= form_with url: "/teams/#{@team.id}/competitors", method: :post, local: true do |form| %>
+  <%= form.label :name %> 
+  <%= form.text_field :name %>
+  <%= form.label :weight_class %>
+  <%= form.number_field :weight_class %>
+  <%= form.label 'Has this competitor won ADCC before?'%>
+  <%= form.check_box :previous_winner %> 
+  <%= form.submit "Create Competitor" %>
+<% end %>

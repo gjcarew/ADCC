@@ -3,6 +3,7 @@
 <%= link_to "Teams", '/teams' %>
 </div>
 <h1> <%=@team.name%> Competitors </h1>
+<p> <%= link_to "Create Competitor", "/teams/#{@team.id}/competitors/new"%>
 <%@competitors.each do |c|%>
   <h2><%= c.name %></h2>
   <p>Weight class: <%= c.weight%></p>
