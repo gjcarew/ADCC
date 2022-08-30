@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get '/competitors/:id', to: 'competitors#show'
   get '/competitors/:id/edit', to: 'competitors#edit'
   patch '/competitors/:id', to: 'competitors#update'
+  delete '/competitors/:id', to: 'competitors#delete'
 end
