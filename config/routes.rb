@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/teams/:id/competitors', to: 'team_competitors#index'
   get '/teams/:id/competitors/new', to: 'team_competitors#new'
   post '/teams/:id/competitors', to: 'team_competitors#create'
+  patch '/teams/:id/competitors', to: 'team_competitors#index'
   get '/competitors', to: 'competitors#index'
   get '/competitors/:id', to: 'competitors#show'
   get '/competitors/:id/edit', to: 'competitors#edit'

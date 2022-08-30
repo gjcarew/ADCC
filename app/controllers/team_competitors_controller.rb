@@ -1,10 +1,12 @@
 class TeamCompetitorsController < ApplicationController
   def index
     @team = Team.find(params[:id])
-    if params[:sort_alphabetically].nil?
-      @competitors = @team.competitors
-    else
+    @competitors = @team.competitors
+    if !params[:sort_alphabetically].nil?
       @competitors = @team.competitors.order("name")
+    end
+    if !params[:threshold_weight].nil?
+      @competitors = @competitors.where("weight_class > #{params[:threshold_weight]}")
     end
   end
 
