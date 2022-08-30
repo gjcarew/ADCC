@@ -15,8 +15,8 @@ RSpec.describe 'teams index' do
         team1 = Team.create!(name: "New Wave Jiu Jitsu", head_coach: "John Danaher", year_founded: 2021, is_brazilian: false)
         team2 = Team.create!(name: "B-team", head_coach: "Craig Jones", year_founded: 2021, is_brazilian: false)
         visit '/teams'
-        expect(all('.team-name')[0].text).to eq(team1.name)
-        expect(all('.team-name')[1].text).to eq(team2.name)
+        expect(all('.card-title')[0].text).to eq(team1.name)
+        expect(all('.card-title')[1].text).to eq(team2.name)
       end
 
       it 'shows when it was created on the page' do
