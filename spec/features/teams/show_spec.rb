@@ -30,6 +30,15 @@ RSpec.describe 'teams show' do
         click_link "#{@atos.name} competitors"
         expect(current_path).to eq("/teams/#{@atos.id}/competitors")
       end
+
+      it 'has a button to delete the team #story 19' do
+        visit "/teams/#{@atos.id}"
+        click_button "Delete Team"
+        expect(current_path).to eq('/teams')
+        expect(page).not_to have_content(@atos.name)
+        visit('/competitors')
+        expect(page).not_to have_content('Tye Ruotolo')
+      end
     end
   end
 end

@@ -17,6 +17,11 @@ class CompetitorsController < ApplicationController
     redirect_to "/competitors/#{params[:id]}"
   end
 
+  def delete
+    Competitor.find(params[:id]).delete
+    redirect_to '/competitors'
+  end
+
   private
 
   def competitor_params

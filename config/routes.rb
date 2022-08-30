@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/teams', to: 'teams#create'
   get '/teams/:id', to: 'teams#show'
   patch '/teams/:id', to: 'teams#update'
+  delete '/teams/:id', to: 'teams#delete'
   get '/teams/:id/edit', to: 'teams#edit'
   get '/teams/:id/competitors', to: 'team_competitors#index'
   get '/teams/:id/competitors/new', to: 'team_competitors#new'
@@ -13,4 +14,5 @@ Rails.application.routes.draw do
   get '/competitors/:id', to: 'competitors#show'
   get '/competitors/:id/edit', to: 'competitors#edit'
   patch '/competitors/:id', to: 'competitors#update'
+  delete '/competitors/:id', to: 'competitors#delete'
 end
