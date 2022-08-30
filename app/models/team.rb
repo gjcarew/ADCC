@@ -9,4 +9,8 @@ class Team < ApplicationRecord
     self.competitors.count
   end
 
+  def delete_competitors
+    self.competitors.delete_all
+  end
+
 end
