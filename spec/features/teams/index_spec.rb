@@ -41,5 +41,18 @@ RSpec.describe 'teams index' do
         expect(current_path).to eq('/teams')
       end
     end
+
+    describe 'User story 17' do
+      it 'has a link to edit parents info' do
+        team1 = Team.create!(name: "New Wave Jiu Jitsu", head_coach: "John Danaher", year_founded: 2021, is_brazilian: false)
+        team2 = Team.create!(name: "B-team", head_coach: "Craig Jones", year_founded: 2021, is_brazilian: false)
+        visit '/teams'
+        click_link "Edit #{team1.name}"
+        expect(current_path).to eq("/teams/#{team1.id}/edit")
+        visit '/teams'
+        click_link "Edit #{team2.name}"
+        expect(current_path).to eq("/teams/#{team2.id}/edit")
+      end
+    end
   end
 end
