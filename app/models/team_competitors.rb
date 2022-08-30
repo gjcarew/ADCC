@@ -1,0 +1,3 @@
+class TeamCompetitor < ApplicationController
+
+end

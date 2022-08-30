@@ -16,6 +16,26 @@ RSpec.describe 'team competitors' do
         expect(page).to have_content("has won ADCC before")
         expect(page).to have_content("has not won ADCC before")
       end
+
+      it 'I see a link to sort competitors in alphabetical order (story 16)' do
+        team = Team.create!(name: "New Wave Jiu Jitsu",
+                            head_coach: "John Danaher",
+                            year_founded: 2021,
+                            is_brazilian: false)
+        competitor = team.competitors.create!(name: "Gordon Ryan",
+                                              weight_class: 100,
+                                              previous_winner: true)
+        competitor2 = team.competitors.create!(name: "Giancarlo Bodoni",
+                                               weight_class: 88,
+                                               previous_winner: false)
+
+        visit "/teams/#{team.id}/competitors"
+
+        click_link 'Sort alphabetically'
+
+        expect(all('.competitor-name')[0].text).to eq(competitor2.name)
+        expect(all('.competitor-name')[1].text).to eq(competitor.name)
+      end
     end
   end
 end
