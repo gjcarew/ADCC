@@ -9,4 +9,5 @@
   <h2 class='competitor-name'><%= c.name %></h2>
   <p>Weight class: <%= c.weight%></p>
   <p><%=c.won_lost_str%></p>
+  <p><%= link_to "Edit #{c.name}", "/competitors/#{c.id}/edit" %>
 <%end%>

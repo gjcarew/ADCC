@@ -5,6 +5,7 @@
 <h1> Competitors </h1>
 <% @competitors.each do |competitor| %>
   <h2><%= competitor.name%></h2>
+  <p><%= link_to "Edit #{competitor.name}", "/competitors/#{competitor.id}/edit" %>
   <p>Weight class: <%= competitor.weight%></p>
   <p><%=competitor.won_lost_str%></p>
 <%end%>
