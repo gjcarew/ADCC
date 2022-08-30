@@ -8,5 +8,4 @@ class Competitor < ApplicationRecord
   def won_lost_str
     "#{name} has #{previous_winner ? "" : "not "}won ADCC before"
   end
-
 end

@@ -1,7 +1,4 @@
-<div>
-<%= link_to "Competitors", '/competitors' %>
-<%= link_to "Teams", '/teams' %>
-</div>
+
 <h1> <%=@team.name%> Competitors </h1>
 <p> <%= link_to "Create Competitor", "/teams/#{@team.id}/competitors/new"%> </p>
 <%= link_to 'Sort alphabetically', :sort_alphabetically => true %>

@@ -1,7 +1,4 @@
-<div>
-<%= link_to "Competitors", '/competitors' %>
-<%= link_to "Teams", '/teams' %>
-</div>
+
 <h1>New Competitor</h1>
 <%= form_with url: "/teams/#{@team.id}/competitors", method: :post, local: true do |form| %>
   <%= form.label :name %> 

@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project creates a basic website to track competitors and teams in ADCC 2021. It currently runs locally.
 
-Things you may want to cover:
+It has seed data which can be set up with 
+`$rails db:{drop, create, migrate, seed}`
 
-* Ruby version
+Gems used for testing include Capybara and Launchy, use `bundle install` to set up your test environment and `bundle exec rspec` to run the tests.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

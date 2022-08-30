@@ -1,7 +1,4 @@
-<div>
-<%= link_to "Competitors", '/competitors' %>
-<%= link_to "Teams", '/teams' %>
-</div>
+
 <h1><%=@competitor.name%></h1>
 <%= button_to 'Update Competitor', "/competitors/#{@competitor.id}/edit", method: :get%>
 <%= button_to 'Delete Competitor', "/competitors/#{@competitor.id}", method: :delete%>
