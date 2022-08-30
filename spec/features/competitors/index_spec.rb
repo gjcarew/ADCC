@@ -8,6 +8,8 @@ RSpec.describe 'competitors index', type: :feature do
         @team2 = Team.create!(name: "B-team", head_coach: "Craig Jones", year_founded: 2021, is_brazilian: false)
         @competitor = @team1.competitors.create!(name: "Gordon Ryan", weight_class: 100, previous_winner: true)
         @competitor2 = @team2.competitors.create!(name: "Nick Rodriguez", weight_class: 100, previous_winner: false)
+        @competitor3 = @team2.competitors.create!(name: "SOmeone good", weight_class: 100, previous_winner: true)
+        
       end
 
       it 'displays the names of the competitors' do
@@ -37,6 +39,13 @@ RSpec.describe 'competitors index', type: :feature do
         visit '/competitors'
 
         expect(page).not_to have_content('has not won ADCC before')
+      end
+
+      it 'I can delete a competitor from the competitor index page' do
+        visit '/competitors'
+        click_button "Delete #{@competitor3.name}"
+        expect(page).to have_content(@competitor.name)
+        expect(page).not_to have_content(@competitor3.name)
       end
     end
   end
