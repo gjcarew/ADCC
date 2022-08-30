@@ -5,9 +5,15 @@
 <h1> <%=@team.name%> Competitors </h1>
 <p> <%= link_to "Create Competitor", "/teams/#{@team.id}/competitors/new"%> </p>
 <%= link_to 'Sort alphabetically', :sort_alphabetically => true %>
+<%= form_with url: "/teams/#{@team.id}/competitors", method: :patch, local: true do |form|%>
+  <%= form.label :threshold_weight %> 
+  <%= form.text_field :threshold_weight %> </br>
+  <%= form.submit "Only return competitors with weight class over the threshold weight" %>
+<%end%>
 <%@competitors.each do |c|%>
   <h2 class='competitor-name'><%= c.name %></h2>
   <p>Weight class: <%= c.weight%></p>
   <p><%=c.won_lost_str%></p>
   <p><%= link_to "Edit #{c.name}", "/competitors/#{c.id}/edit" %>
+
 <%end%>
