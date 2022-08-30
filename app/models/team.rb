@@ -13,4 +13,7 @@ class Team < ApplicationRecord
     self.competitors.delete_all
   end
 
+  def search_threshold_weight(threshold)
+    self.competitors.where("weight_class > #{threshold}")
+  end
 end
