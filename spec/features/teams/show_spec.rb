@@ -31,7 +31,7 @@ RSpec.describe 'teams show' do
         expect(current_path).to eq("/teams/#{@atos.id}/competitors")
       end
 
-      it 'has a button to delete the team' do
+      it 'has a button to delete the team #story 19' do
         visit "/teams/#{@atos.id}"
         click_button "Delete Team"
         expect(current_path).to eq('/teams')

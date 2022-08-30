@@ -22,4 +22,16 @@ RSpec.describe Team, type: :model do
     expect(atos.count).to eq(4)
   end
 
+  it 'deletes all members of a team' do
+    atos = Team.create!(name: "Atos", head_coach: "Andre Galvao", year_founded: 2008, is_brazilian: true)
+    atos.competitors.create!(name: 'Alexandre de Jesus', weight_class: 88,previous_winner: false)
+    atos.competitors.create!(name: 'Josh Hinger', weight_class: 88, previous_winner: false)
+    atos.competitors.create!(name: 'Tye Ruotolo', weight_class: 88, previous_winner: false)
+    atos.competitors.create!(name: 'Lucas Barbosa', weight_class: 88, previous_winner: false)
+    atos.delete_competitors
+    expect(atos.competitors).to be_empty
+  end
+
+
+
 end
